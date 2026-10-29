@@ -1,0 +1,22 @@
+[
+  {
+    "kategoria": "Jedzenie",
+    "kwota": 45.50,
+    "opis": "Zakupy w spożywczym"
+  },
+  {
+    "kategoria": "Rozrywka",
+    "kwota": 60.00,
+    "opis": "Kino ze znajomymi"
+  },
+  {
+    "kategoria": "Jedzenie",
+    "kwota": 25.00,
+    "opis": "Obiad na mieście"
+  },
+  {
+    "kategoria": "Rachunki",
+    "kwota": 120.00,
+    "opis": "Internet i abonament"
+  }
+]

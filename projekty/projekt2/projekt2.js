@@ -1,31 +1,16 @@
-const readline = require('node:readline/promises');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-});
+const fs = require('node:fs/promises');
 
 async function pobierzTransakcje() {
-    let dane = [];
 
-    for (let i = 0; i < 3; i++) {
-        let kategoria = await rl.question("Podaj nazwe kategorii: ");
-        let kwota = parseFloat(await rl.question("Podaj kwote: "));
-        let opis = await rl.question("Podaj opis: ");
-        let transakcja = {
-            kategoria,
-            kwota,
-            opis,
-        };
 
-        dane.push(transakcja);
-    }
+    const file = await fs.readFile("projekty/projekt2/transakcje.json", 'utf-8');
+    const transakcje = JSON.parse(file);
     
-    rl.close()
     return new Promise((resolve, reject) => {
         let czyTransakcjaSieUdala = true;
         setTimeout(() => {
             if(czyTransakcjaSieUdala) {
-                resolve(dane)
+                resolve(transakcje)
             }
             else {
                 reject("jest blad");
