@@ -1,9 +1,12 @@
 const fs = require('node:fs/promises');
+const path = require("node:path");
+
+const filePath = path.join(__dirname, 'transakcje.json');
 
 async function pobierzTransakcje() {
 
 
-    const file = await fs.readFile("projekty/projekt2/transakcje.json", 'utf-8');
+    const file = await fs.readFile(filePath, 'utf-8');
     const transakcje = JSON.parse(file);
     
     return new Promise((resolve, reject) => {
